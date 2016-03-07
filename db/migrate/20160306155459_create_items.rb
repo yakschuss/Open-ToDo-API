@@ -3,7 +3,8 @@ class CreateItems < ActiveRecord::Migration
     create_table :items do |t|
       t.integer :user_id
       t.integer :list_id
-      t.string :name
+      t.string :description
+      t.string :permissions
       t.timestamps null: false
     end
   end
