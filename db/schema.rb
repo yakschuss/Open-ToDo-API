@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20160306155502) do
     t.integer  "user_id"
     t.integer  "list_id"
     t.string   "description"
-    t.string   "permissions"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -26,8 +25,9 @@ ActiveRecord::Schema.define(version: 20160306155502) do
     t.integer  "user_id"
     t.integer  "item_id"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "permissions"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

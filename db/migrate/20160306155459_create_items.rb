@@ -4,7 +4,6 @@ class CreateItems < ActiveRecord::Migration
       t.integer :user_id
       t.integer :list_id
       t.string :description
-      t.string :permissions
       t.timestamps null: false
     end
   end
