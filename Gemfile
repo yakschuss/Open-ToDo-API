@@ -21,6 +21,7 @@ source 'https://rubygems.org'
  gem 'figaro'
  gem 'pry'
  gem 'active_model_serializers'
+ 
  group :development, :test do
    gem 'byebug'
    gem 'web-console', '~> 2.0'
