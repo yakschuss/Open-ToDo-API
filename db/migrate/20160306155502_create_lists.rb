@@ -3,6 +3,8 @@ class CreateLists < ActiveRecord::Migration
     create_table :lists do |t|
       t.integer :user_id
       t.integer :item_id
+      t.string :name
+      t.string :permissions
       t.timestamps null: false
     end
   end
