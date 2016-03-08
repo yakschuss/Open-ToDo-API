@@ -2,6 +2,14 @@ class Api::ItemsController < ApiController
   before_action :authenticated?
 
 
+    def index
+      return permission_denied_error unless conditions_met
+
+      items = Item.all
+
+      render json: items, each_serializer: ItemSerializer
+    end
+
     def create
       item = Item.new(item_params)
 
@@ -24,6 +32,10 @@ class Api::ItemsController < ApiController
 
     private
 
+    def conditions_met
+      true
+    end
+    
     def item_params
       params.require(:item).permit(:description, :list_id, :completed)
     end
