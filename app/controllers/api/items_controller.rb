@@ -1,6 +1,6 @@
 class Api::ItemsController < ApiController
-  before_action :authenticated?
-
+  before_action :authenticate_user
+  before_action :authorize_user
 
     def index
       return permission_denied_error unless conditions_met
@@ -35,7 +35,7 @@ class Api::ItemsController < ApiController
     def conditions_met
       true
     end
-    
+
     def item_params
       params.require(:item).permit(:description, :list_id, :completed)
     end
