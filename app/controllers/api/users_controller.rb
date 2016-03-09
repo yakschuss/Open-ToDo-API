@@ -1,5 +1,5 @@
 class Api::UsersController < ApiController
-  before_action :authenticated?
+  before_action :authenticate_user
 
   def index
     return permission_denied_error unless conditions_met
@@ -21,7 +21,7 @@ class Api::UsersController < ApiController
   end
 
   def destroy
-    
+
     begin
       user = User.find(params[:id])
       user.destroy
